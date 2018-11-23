@@ -1,0 +1,15 @@
+# vi log_script
+#!/bin/sh
+# date
+mm=`date +'%Y%m%d'`
+cd $HOME/
+if [ -d $mm ]; then
+  :
+else
+  mkdir $mm
+fi
+cd $mm
+
+dt=`date +'%Y%m%d%H%M%S'`
+file_name="scriptlog_$dt.log"
+script ./$file_name
